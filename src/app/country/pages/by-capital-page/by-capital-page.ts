@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SearchInput } from "../../components/search-input/search-input";
 import { CountryList } from "../../components/country-list/country-list";
+import { Country } from '../../services/country';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -9,7 +10,14 @@ import { CountryList } from "../../components/country-list/country-list";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ByCapitalPage {
+  Country = inject(Country);
 
 
+  onSearch(query:string){
 
+    this.Country.searchByCapital(query)
+    .subscribe( resp => {
+      console.log({ resp });
+    })
+  }
 }

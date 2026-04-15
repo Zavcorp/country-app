@@ -8,4 +8,7 @@ import { CountryList } from "../../components/country-list/country-list";
   templateUrl: './by-country-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ByCountryPage { }
+export class ByCountryPage {
+
+
+}
