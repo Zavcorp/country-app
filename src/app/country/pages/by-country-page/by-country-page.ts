@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 import { SearchInput } from "../../components/search-input/search-input";
 import { CountryList } from "../../components/country-list/country-list";
+import { CountryInterface } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'by-country-page',
@@ -10,5 +11,5 @@ import { CountryList } from "../../components/country-list/country-list";
 })
 export class ByCountryPage {
 
-
+  countries = input.required<CountryInterface[]>();
 }
